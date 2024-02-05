@@ -7,6 +7,7 @@
 void readCoursesCSV();
 
 int main() {
+    std::cout << "Welcome to the CCF - Course Conflict Fixer! Please input the name of the course csv below:" << std::endl;
     readCoursesCSV();
 
 
