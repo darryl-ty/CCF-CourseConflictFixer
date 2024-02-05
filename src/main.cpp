@@ -15,7 +15,8 @@ int main() {
 }
 
 void readCoursesCSV() {
-    std::ifstream file("courses.csv");
+    //TODO - Fix this so I do not need to pass the absolute path to file stream.
+    std::ifstream file("src/courses.csv");
     std::vector<std::vector<std::string>> data;
 
     // Read and print each line
