@@ -24,6 +24,7 @@ std::string collectCourseFile(){
 }
 
 void readCoursesCSV(const std::string& input) {
+    bool firstLine = true;
     std::ifstream file(input);
     std::vector<std::vector<std::string>> data;
 
@@ -42,12 +43,13 @@ void readCoursesCSV(const std::string& input) {
     }
 
 
+    data.erase(data.begin());
     file.close();
 
 
     for (const auto& row : data) {
         for (const auto& value : row) {
-            std::cout << value << "\t";
+            std::cout << value << "|";
         }
         std::cout << std::endl;
     }
