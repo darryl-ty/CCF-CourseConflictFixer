@@ -4,18 +4,27 @@
 #include <string>
 #include <vector>
 
-void readCoursesCSV();
+std::string collectCourseFile();
+void readCoursesCSV(const std::string&);
 
 int main() {
     std::cout << "Welcome to the CCF - Course Conflict Fixer! Please input the name of the course csv below:" << std::endl;
-    readCoursesCSV();
+    std::string userInput = collectCourseFile();
+    readCoursesCSV(userInput);
 
 
     return 0;
 }
 
-void readCoursesCSV() {
-    std::ifstream file("courses.csv");
+std::string collectCourseFile(){
+    std::string userFileString;
+    std::cin >> userFileString;
+
+    return userFileString;
+}
+
+void readCoursesCSV(const std::string& input) {
+    std::ifstream file(input);
     std::vector<std::vector<std::string>> data;
 
     // Read and print each line
