@@ -24,7 +24,6 @@ std::string collectCourseFile(){
 }
 
 void readCoursesCSV(const std::string& input) {
-    bool firstLine = true;
     std::ifstream file(input);
     std::vector<std::vector<std::string>> data;
 
