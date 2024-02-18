@@ -3,9 +3,10 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include "courses.h"
 
 std::string collectCourseFile();
-void readCoursesCSV(const std::string&);
+std::vector<Courses> readCoursesCSV(const std::string&);
 
 int main() {
     std::cout << "Welcome to the CCF - Course Conflict Fixer! Please input the name of the course csv below:" << std::endl;
@@ -23,30 +24,31 @@ std::string collectCourseFile(){
     return userFileString;
 }
 
-void readCoursesCSV(const std::string& input) {
+std::vector<Courses> readCoursesCSV(const std::string& input) {
     std::ifstream file(input);
-    std::vector<std::vector<std::string>> data;
+    std::vector<Courses> courses;
 
     // Read and print each line
     std::string line;
     while (std::getline(file, line)) {
-        std::vector<std::string> row;
+        std::string semester, department, classNum, sectionNum, className, enrollLimit;
         std::stringstream ss(line);
         std::string value;
 
         while (std::getline(ss, value, '|')) {
-            row.push_back(value);
+
         }
 
-        data.push_back(row);
+        Courses(semester, department, classNum, sectionNum, className, enrollLimit, ) course;
+        courses.push_back(course);
     }
 
 
-    data.erase(data.begin());
+    courses.erase(courses.begin());
     file.close();
 
 
-    for (const auto& row : data) {
+    for (const auto& row : courses) {
         for (const auto& value : row) {
             std::cout << value << "|";
         }
