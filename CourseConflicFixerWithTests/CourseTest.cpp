@@ -11,4 +11,5 @@ Course testCourse = {"202408", "CPSC","1005","1","Intro to PCs and Software Appl
 TEST_CASE("Test different variables of Course objects."){
 
     CHECK((testCourse.getSemesterOffered()) == ("202408"));
+    CHECK((testCourse.getSemesterOffered()) == ("202301"));
 }
