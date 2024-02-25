@@ -4,23 +4,16 @@
 #include <string>
 #include <vector>
 
-std::string collectCourseFile();
 void readCoursesCSV(const std::string&);
 
 int main() {
-    std::cout << "Welcome to the CCF - Course Conflict Fixer! Please input the name of the course csv below:" << std::endl;
-    std::string userInput = collectCourseFile();
-    readCoursesCSV(userInput);
+    const std::string coursesFile = "courses.csv";
+
+    std::cout << "Welcome to the CCF - Course Conflict Fixer!" << std::endl;
+    readCoursesCSV(coursesFile);
 
 
     return 0;
-}
-
-std::string collectCourseFile(){
-    std::string userFileString;
-    std::cin >> userFileString;
-
-    return userFileString;
 }
 
 void readCoursesCSV(const std::string& input) {
