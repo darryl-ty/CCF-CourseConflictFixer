@@ -1,0 +1,2 @@
+add_executable(CourseConflictFixerWithTests_run CourseTest.cpp)
+target_link_libraries(CourseConflictFixerWithTests_run src)
