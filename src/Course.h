@@ -22,45 +22,45 @@ public:
 //
 //    void setDepartment(const std::string& department);
 //
-//    void setMClassNum(const std::string &mClassNum);
+//    void setClassNum(const std::string &mClassNum);
 //
-//    void setMSectionNum(const std::string &mSectionNum);
+//    void setSectionNum(const std::string &mSectionNum);
 //
-//    void setMClassName(const std::string &mClassName);
+//    void setClassName(const std::string &mClassName);
 //
-//    void setMEnrollLimit(const std::string &mEnrollLimit);
+//    void setEnrollLimit(const std::string &mEnrollLimit);
 //
-//    void setMDays(const std::vector<std::string> &mDays);
+//    void setDays(const std::vector<std::string> &mDays);
 //
-//    void setMTime(const std::vector<std::string> &mTime);
+//    void setTime(const std::vector<std::string> &mTime);
 //
-//    void setMBuilding(const std::vector<std::string> &mBuilding);
+//    void setBuilding(const std::vector<std::string> &mBuilding);
 //
-//    void setMRoom(const std::vector<std::string> &mRoom);
+//    void setRoom(const std::vector<std::string> &mRoom);
 //
-//    void setMTeachers(const std::vector<std::string> &mTeachers);
+//    void setTeachers(const std::vector<std::string> &mTeachers);
 //
     const std::string &getSemesterOffered() const;
 //
-//    const std::string &getMDepartment() const;
+//    const std::string &getDepartment() const;
 //
-//    const std::string &getMClassNum() const;
+//    const std::string &getClassNum() const;
 //
-//    const std::string &getMSectionNum() const;
+//    const std::string &getSectionNum() const;
 //
-//    const std::string &getMClassName() const;
+//    const std::string &getClassName() const;
 //
-//    const std::string &getMEnrollLimit() const;
+//    const std::string &getEnrollLimit() const;
 //
-//    const std::vector<std::string> &getMDays() const;
+//    const std::vector<std::string> &getDays() const;
 //
-//    const std::vector<std::string> &getMTime() const;
+//    const std::vector<std::string> &getTime() const;
 //
-//    const std::vector<std::string> &getMBuilding() const;
+//    const std::vector<std::string> &getBuilding() const;
 //
-//    const std::vector<std::string> &getMRoom() const;
+//    const std::vector<std::string> &getRoom() const;
 //
-//    const std::vector<std::string> &getMTeachers() const;
+//    const std::vector<std::string> &getTeachers() const;
 
 
 };

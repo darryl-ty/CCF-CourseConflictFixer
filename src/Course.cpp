@@ -20,39 +20,39 @@ Course::Course(){};
 //    m_department = department;
 //}
 //
-//void Courses::setMClassNum(const std::string& mClassNum) {
+//void Courses::setClassNum(const std::string& mClassNum) {
 //    m_classNum = mClassNum;
 //}
 //
-//void Courses::setMSectionNum(const std::string& mSectionNum) {
+//void Courses::setSectionNum(const std::string& mSectionNum) {
 //    m_sectionNum = mSectionNum;
 //}
 //
-//void Courses::setMClassName(const std::string& mClassName) {
+//void Courses::setClassName(const std::string& mClassName) {
 //    m_className = mClassName;
 //}
 //
-//void Courses::setMEnrollLimit(const std::string& mEnrollLimit) {
+//void Courses::setEnrollLimit(const std::string& mEnrollLimit) {
 //    m_enrollLimit = mEnrollLimit;
 //}
 //
-//void Courses::setMDays(const std::vector<std::string>& mDays) {
+//void Courses::setDays(const std::vector<std::string>& mDays) {
 //    m_days = mDays;
 //}
 //
-//void Courses::setMTime(const std::vector<std::string>& mTime) {
+//void Courses::setTime(const std::vector<std::string>& mTime) {
 //    m_time = mTime;
 //}
 //
-//void Courses::setMBuilding(const std::vector<std::string>& mBuilding) {
+//void Courses::setBuilding(const std::vector<std::string>& mBuilding) {
 //    m_building = mBuilding;
 //}
 //
-//void Courses::setMRoom(const std::vector<std::string>& mRoom) {
+//void Courses::setRoom(const std::vector<std::string>& mRoom) {
 //    m_room = mRoom;
 //}
 //
-//void Courses::setMTeachers(const std::vector<std::string>& mTeachers) {
+//void Courses::setTeachers(const std::vector<std::string>& mTeachers) {
 //    m_teachers = mTeachers;
 //}
 //
@@ -60,42 +60,42 @@ const std::string &Course::getSemesterOffered() const {
     return m_semesterOffered;
 }
 //
-//const std::string &Courses::getMDepartment() const {
+//const std::string &Courses::getDepartment() const {
 //    return m_department;
 //}
 //
-//const std::string &Courses::getMClassNum() const {
+//const std::string &Courses::getClassNum() const {
 //    return m_classNum;
 //}
 //
-//const std::string &Courses::getMSectionNum() const {
+//const std::string &Courses::getSectionNum() const {
 //    return m_sectionNum;
 //}
 //
-//const std::string &Courses::getMClassName() const {
+//const std::string &Courses::getClassName() const {
 //    return m_className;
 //}
 //
-//const std::string &Courses::getMEnrollLimit() const {
+//const std::string &Courses::getEnrollLimit() const {
 //    return m_enrollLimit;
 //}
 //
-//const std::vector<std::string> &Courses::getMDays() const {
+//const std::vector<std::string> &Courses::getDays() const {
 //    return m_days;
 //}
 //
-//const std::vector<std::string> &Courses::getMTime() const {
+//const std::vector<std::string> &Courses::getTime() const {
 //    return m_time;
 //}
 //
-//const std::vector<std::string> &Courses::getMBuilding() const {
+//const std::vector<std::string> &Courses::getBuilding() const {
 //    return m_building;
 //}
 //
-//const std::vector<std::string> &Courses::getMRoom() const {
+//const std::vector<std::string> &Courses::getRoom() const {
 //    return m_room;
 //}
 //
-//const std::vector<std::string> &Courses::getMTeachers() const {
+//const std::vector<std::string> &Courses::getTeachers() const {
 //    return m_teachers;
 //}
