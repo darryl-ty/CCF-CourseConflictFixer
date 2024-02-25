@@ -7,16 +7,16 @@
 #include <vector>
 
 
-class Courses {
-    std::string m_semesterOffered, m_department, m_classNum, m_sectionNum, m_className, m_enrollLimit;
-    std::vector<std::string> m_days, m_time, m_building, m_room, m_teachers;
+class Course {
+    std::string m_semesterOffered, m_department, m_classNum, m_sectionNum, m_className;
+    std::vector<std::string> m_enrollLimit, m_days, m_time, m_building, m_room, m_teachers;
 
 public:
-    Courses(std::string semesterOffered, std::string department, std::string classNum, std::string sectionNum,
-            std::string className, std::string enrollLimit, std::vector<std::string>& days,
-            std::vector<std::string>& time, std::vector<std::string>& building,
-            std::vector<std::string>& room, std::vector<std::string>& teachers);
-    Courses();
+    Course(std::string semesterOffered, std::string department, std::string classNum, std::string sectionNum,
+           std::string className, std::vector<std::string> enrollLimit, std::vector<std::string> days,
+           std::vector<std::string> time, std::vector<std::string> building,
+           std::vector<std::string> room, std::vector<std::string> teachers);
+    Course();
 
 //    void setSemesterOffered(const std::string& semester);
 //
@@ -40,7 +40,7 @@ public:
 //
 //    void setMTeachers(const std::vector<std::string> &mTeachers);
 //
-//    const std::string &getMSemesterOffered() const;
+    const std::string &getSemesterOffered() const;
 //
 //    const std::string &getMDepartment() const;
 //

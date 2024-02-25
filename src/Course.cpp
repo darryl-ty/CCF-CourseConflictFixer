@@ -3,14 +3,14 @@
 #include <string>
 #include "Course.h"
 
-Courses::Courses(std::string semesterOffered, std::string department, std::string classNum,
-                 std::string sectionNum, std::string className, std::string enrollLimit,
-                 std::vector<std::string> &days, std::vector<std::string> &time, std::vector<std::string> &building,
-                 std::vector<std::string> &room, std::vector<std::string> &teachers) : m_semesterOffered(semesterOffered), m_department(department),
+Course::Course(std::string semesterOffered, std::string department, std::string classNum,
+                 std::string sectionNum, std::string className, std::vector<std::string> enrollLimit,
+                 std::vector<std::string> days, std::vector<std::string> time, std::vector<std::string> building,
+                 std::vector<std::string> room, std::vector<std::string> teachers) : m_semesterOffered(semesterOffered), m_department(department),
                  m_classNum(classNum), m_sectionNum(sectionNum), m_className(className),
                  m_enrollLimit(enrollLimit), m_days(days), m_time(time), m_building(building), m_room(room), m_teachers(teachers){};
 
-Courses::Courses(){};
+Course::Course(){};
 
 //void Courses::setSemesterOffered(const std::string& semester) {
 //    m_semesterOffered = semester;
@@ -56,9 +56,9 @@ Courses::Courses(){};
 //    m_teachers = mTeachers;
 //}
 //
-//const std::string &Courses::getMSemesterOffered() const {
-//    return m_semesterOffered;
-//}
+const std::string &Course::getSemesterOffered() const {
+    return m_semesterOffered;
+}
 //
 //const std::string &Courses::getMDepartment() const {
 //    return m_department;
