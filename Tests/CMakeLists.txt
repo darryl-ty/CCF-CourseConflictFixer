@@ -1,1 +1,0 @@
-add_executable(Tests_run CourseTest.cpp)
