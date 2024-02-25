@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "Course.h"
+
 void readCoursesCSV(const std::string&);
 
 int main() {
@@ -18,31 +20,37 @@ int main() {
 
 void readCoursesCSV(const std::string& input) {
     std::ifstream file(input);
-    std::vector<std::vector<std::string>> data;
-
-    // Read and print each line
     std::string line;
-    while (std::getline(file, line)) {
-        std::vector<std::string> row;
-        std::stringstream ss(line);
-        std::string value;
 
-        while (std::getline(ss, value, '|')) {
-            row.push_back(value);
+    std::getline(file,line); //skips header
+    while(std::getline(file, line)){
+        std::string semester;
+        std::string dept;
+        std::string classNum;
+        std::string section;
+        std::string className;
+
+        std::string next;
+        std::vector<std::string> result;
+        for (char itr : line) {
+            if (itr == '|') {
+                if (!next.empty()) {
+                    result.push_back(next);
+                    next.clear();
+                }
+            } else {
+                next += itr;
+            }
         }
+        if (!next.empty())
+            result.push_back(next);
 
-        data.push_back(row);
+        for (auto& entry : result){
+            for (auto& value : entry){
+                std::cout << value << "";
+            }
+        }
     }
 
 
-    data.erase(data.begin());
-    file.close();
-
-
-    for (const auto& row : data) {
-        for (const auto& value : row) {
-            std::cout << value << "|";
-        }
-        std::cout << std::endl;
-    }
 }
