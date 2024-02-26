@@ -6,21 +6,22 @@
 
 #include "Course.h"
 
-void readCoursesCSV(const std::string&);
+std::vector<Course> readCoursesCSV(const std::string&);
 
 int main() {
     const std::string coursesFile = "courses.csv";
 
     std::cout << "Welcome to the CCF - Course Conflict Fixer!" << std::endl;
-    readCoursesCSV(coursesFile);
+    auto courses = readCoursesCSV(coursesFile);
 
 
     return 0;
 }
 
-void readCoursesCSV(const std::string& input) {
+std::vector<Course> readCoursesCSV(const std::string& input) {
     std::ifstream file(input);
     std::string line;
+    std::vector<Course> courses;
 
     std::getline(file,line); //skips header
     while(std::getline(file, line)){
@@ -29,28 +30,71 @@ void readCoursesCSV(const std::string& input) {
         std::string classNum;
         std::string section;
         std::string className;
+        std::vector<std::string> enrollLimit;
+        std::vector<std::string> days;
+        std::vector<std::string> time;
+        std::vector<std::string> building;
+        std::vector<std::string> room;
+        std::vector<std::string> teachers;
 
-        std::string next;
-        std::vector<std::string> result;
+        std::string value;
+        std::vector<std::string> courseValues;
         for (char itr : line) {
             if (itr == '|') {
-                if (!next.empty()) {
-                    result.push_back(next);
-                    next.clear();
+                if (!value.empty()) {
+                    courseValues.push_back(value);
+                    value.clear();
                 }
             } else {
-                next += itr;
+                value += itr;
             }
         }
-        if (!next.empty())
-            result.push_back(next);
+        if (!value.empty())
+            courseValues.push_back(value);
 
-        for (auto& entry : result){
-            for (auto& value : entry){
-                std::cout << value << "";
+
+        for (size_t i = 0; i < courseValues.size(); i++){
+            switch (i) {
+                case 0:
+                    semester = courseValues[i];
+                    break;
+                case 1:
+                    dept = courseValues[i];
+                    break;
+                case 2:
+                    classNum = courseValues[i];
+                    break;
+                case 3:
+                    section = courseValues[i];
+                    break;
+                case 4:
+                    className = courseValues[i];
+                    break;
+                case 5:
+                    days.push_back(courseValues[i]);
+                    break;
+                case 6:
+                    time.push_back(courseValues[i]);
+                    break;
+                case 7:
+                    building.push_back(courseValues[i]);
+                    break;
+                case 8:
+                    room.push_back(courseValues[i]);
+                    break;
+                case 9:
+                    enrollLimit.push_back(courseValues[i]);
+                    break;
+                case 10:
+                    teachers.push_back(courseValues[i]);
+                    break;
             }
         }
+
+        courses.emplace_back(semester,dept,classNum,section,className,enrollLimit,days,time,building,room,teachers);
+
     }
 
 
+    return courses;
 }
