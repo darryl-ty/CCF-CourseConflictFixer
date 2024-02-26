@@ -1,14 +1,15 @@
 
 //#include <string_view> TODO - Refactor all strings later to be string_views, we only need to view and compare strings, not modify.
 #include <string>
+#include <utility>
 #include "Course.h"
 
 Course::Course(std::string semesterOffered, std::string department, std::string classNum,
                  std::string sectionNum, std::string className, std::vector<std::string> enrollLimit,
                  std::vector<std::string> days, std::vector<std::string> time, std::vector<std::string> building,
-                 std::vector<std::string> room, std::vector<std::string> teachers) : m_semesterOffered(semesterOffered), m_department(department),
-                 m_classNum(classNum), m_sectionNum(sectionNum), m_className(className),
-                 m_enrollLimit(enrollLimit), m_days(days), m_time(time), m_building(building), m_room(room), m_teachers(teachers){};
+                 std::vector<std::string> room, std::vector<std::string> teachers) : m_semesterOffered(std::move(semesterOffered)), m_department(std::move(department)),
+                 m_classNum(std::move(classNum)), m_sectionNum(std::move(sectionNum)), m_className(std::move(className)),
+                 m_enrollLimit(std::move(enrollLimit)), m_days(std::move(days)), m_time(std::move(time)), m_building(std::move(building)), m_room(std::move(room)), m_teachers(std::move(teachers)){};
 
 Course::Course(){};
 
