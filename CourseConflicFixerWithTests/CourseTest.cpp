@@ -1,4 +1,4 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#define DOCTEST_CONFIG_IMPLEMENT
 
 #include "../../CourseConflictFixer/src/Course.h"
 #include "doctest.h"
