@@ -1,12 +1,14 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <string>
 #include <vector>
+#include <assert.h>
 
 #include "Course.h"
 
 std::vector<Course> readCoursesCSV(const std::string&);
+
+void testCourses(const std::vector<Course>& courses);
 
 int main() {
     const std::string coursesFile = "courses.csv";
@@ -14,8 +16,17 @@ int main() {
     std::cout << "Welcome to the CCF - Course Conflict Fixer!" << std::endl;
     auto courses = readCoursesCSV(coursesFile);
 
+    testCourses(courses);
+
 
     return 0;
+}
+
+void testCourses(const std::vector<Course>& courses) {
+
+    assert(!courses.empty());
+    assert("202408" == courses[0].getSemesterOffered());
+    assert("202301" != courses[0].getSemesterOffered());
 }
 
 std::vector<Course> readCoursesCSV(const std::string& input) {
