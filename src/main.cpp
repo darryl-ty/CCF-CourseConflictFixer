@@ -22,13 +22,6 @@ int main() {
     return 0;
 }
 
-void testCourses(const std::vector<Course>& courses) {
-
-    assert(!courses.empty());
-    assert("202408" == courses[0].getSemesterOffered());
-    assert("202301" != courses[0].getSemesterOffered());
-}
-
 std::vector<Course> readCoursesCSV(const std::string& input) {
     std::ifstream file(input);
     std::string line;
@@ -108,4 +101,13 @@ std::vector<Course> readCoursesCSV(const std::string& input) {
 
 
     return courses;
+}
+
+
+void testCourses(const std::vector<Course>& courses) {
+
+    assert(!courses.empty());
+    assert(1 < courses[0].getSemesterOffered().size());
+    assert("202408" == courses[0].getSemesterOffered());
+    assert("202301" != courses[0].getSemesterOffered());
 }
