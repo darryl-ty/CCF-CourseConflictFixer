@@ -107,7 +107,13 @@ std::vector<Course> readCoursesCSV(const std::string& input) {
 void testCourses(const std::vector<Course>& courses) {
 
     assert(!courses.empty());
+
     assert(!courses[0].getSemesterOffered().empty());
-    assert("202408" == courses[0].getSemesterOffered());
     assert("202301" != courses[0].getSemesterOffered());
+    assert("202408" == courses[0].getSemesterOffered());
+
+    assert(!courses[1].getSemesterOffered().empty());
+    assert("202408" != courses[1].getSemesterOffered());
+    assert("202501" == courses[1].getSemesterOffered());
+
 }
