@@ -8,6 +8,7 @@
 
 std::vector<Course> readCoursesCSV(const std::string&);
 
+void compareCourseEntries(const std::vector<Course>& courses);
 void testCourses(const std::vector<Course>& courses);
 
 int main() {
@@ -15,6 +16,8 @@ int main() {
 
     std::cout << "Welcome to the CCF - Course Conflict Fixer!" << std::endl;
     auto courses = readCoursesCSV(coursesFile);
+
+    compareCourseEntries(courses);
 
 
     testCourses(courses);
@@ -102,6 +105,10 @@ std::vector<Course> readCoursesCSV(const std::string& input) {
 
 
     return courses;
+}
+
+void compareCourseEntries(const std::vector<Course>& courses) {
+
 }
 
 
