@@ -60,11 +60,11 @@ Course::Course(){};
 const std::string &Course::getSemesterOffered() const {
     return m_semesterOffered;
 }
-//
-//const std::string &Courses::getDepartment() const {
-//    return m_department;
-//}
-//
+
+const std::string &Course::getDepartment() const {
+    return m_department;
+}
+
 //const std::string &Courses::getClassNum() const {
 //    return m_classNum;
 //}

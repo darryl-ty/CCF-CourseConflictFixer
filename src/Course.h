@@ -41,8 +41,8 @@ public:
 //    void setTeachers(const std::vector<std::string> &mTeachers);
 //
     const std::string &getSemesterOffered() const;
-//
-//    const std::string &getDepartment() const;
+
+    const std::string &getDepartment() const;
 //
 //    const std::string &getClassNum() const;
 //
