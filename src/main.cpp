@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <assert.h>
+#include <cassert>
 
 #include "Course.h"
 
@@ -15,6 +15,7 @@ int main() {
 
     std::cout << "Welcome to the CCF - Course Conflict Fixer!" << std::endl;
     auto courses = readCoursesCSV(coursesFile);
+
 
     testCourses(courses);
 
@@ -111,9 +112,14 @@ void testCourses(const std::vector<Course>& courses) {
     assert(!courses[0].getSemesterOffered().empty());
     assert("202301" != courses[0].getSemesterOffered());
     assert("202408" == courses[0].getSemesterOffered());
+    assert("PSYCH" != courses[0].getDepartment());
+    assert("CPSC" == courses[0].getDepartment());
 
     assert(!courses[1].getSemesterOffered().empty());
     assert("202408" != courses[1].getSemesterOffered());
     assert("202501" == courses[1].getSemesterOffered());
+    assert("ENGR" != courses[0].getDepartment());
+    assert("CPSC" == courses[0].getDepartment());
+
 
 }
