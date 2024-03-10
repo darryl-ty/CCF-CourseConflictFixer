@@ -13,6 +13,8 @@ Course::Course(std::string semesterOffered, std::string department, std::string 
 
 Course::Course(){};
 
+
+
 //void Courses::setSemesterOffered(const std::string& semester) {
 //    m_semesterOffered = semester;
 //}
@@ -99,4 +101,30 @@ const std::vector<std::string> &Course::getRoom() const {
 
 const std::vector<std::string> &Course::getTeachers() const {
     return m_teachers;
+}
+
+std::bitset<6> Course::compareCourses(const Course &course) const {
+    std::bitset<6> conflictBitset;
+
+    if (this->getSemesterOffered() == course.getSemesterOffered())
+        conflictBitset.set(0);
+    if (this->getDays() == course.getDays())
+        conflictBitset.set(1);
+    if(this->getTime() == course.getTime())
+        conflictBitset.set(2);
+    if (this->getBuilding() == course.getBuilding())
+        conflictBitset.set(3);
+    if (this->getRoom() == course.getRoom())
+        conflictBitset.set(4);
+    if (this->getTeachers() == course.getTeachers())
+        conflictBitset.set(5);
+
+
+
+
+    return conflictBitset;
+}
+
+void Course::calculateDecimalNum(const std::bitset<6> &conflictBitset) {
+
 }
