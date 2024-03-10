@@ -65,38 +65,38 @@ const std::string &Course::getDepartment() const {
     return m_department;
 }
 
-//const std::string &Courses::getClassNum() const {
-//    return m_classNum;
-//}
-//
-//const std::string &Courses::getSectionNum() const {
-//    return m_sectionNum;
-//}
-//
-//const std::string &Courses::getClassName() const {
-//    return m_className;
-//}
-//
-//const std::string &Courses::getEnrollLimit() const {
-//    return m_enrollLimit;
-//}
-//
-//const std::vector<std::string> &Courses::getDays() const {
-//    return m_days;
-//}
-//
-//const std::vector<std::string> &Courses::getTime() const {
-//    return m_time;
-//}
-//
-//const std::vector<std::string> &Courses::getBuilding() const {
-//    return m_building;
-//}
-//
-//const std::vector<std::string> &Courses::getRoom() const {
-//    return m_room;
-//}
-//
-//const std::vector<std::string> &Courses::getTeachers() const {
-//    return m_teachers;
-//}
+const std::string &Course::getClassNum() const {
+    return m_classNum;
+}
+
+const std::string &Course::getSectionNum() const {
+    return m_sectionNum;
+}
+
+const std::string &Course::getClassName() const {
+    return m_className;
+}
+
+const std::vector<std::string> &Course::getEnrollLimit() const {
+    return m_enrollLimit;
+}
+
+const std::vector<std::string> &Course::getDays() const {
+    return m_days;
+}
+
+const std::vector<std::string> &Course::getTime() const {
+    return m_time;
+}
+
+const std::vector<std::string> &Course::getBuilding() const {
+    return m_building;
+}
+
+const std::vector<std::string> &Course::getRoom() const {
+    return m_room;
+}
+
+const std::vector<std::string> &Course::getTeachers() const {
+    return m_teachers;
+}
