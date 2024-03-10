@@ -120,11 +120,26 @@ std::bitset<6> Course::compareCourses(const Course &course) const {
         conflictBitset.set(5);
 
 
+    Course::calculateConflicts(conflictBitset);
 
 
     return conflictBitset;
 }
 
-void Course::calculateDecimalNum(const std::bitset<6> &conflictBitset) {
+void Course::calculateConflicts(const std::bitset<6> &conflictBitset) {
+    switch (conflictBitset.to_ulong()) {
+        case 0:
+            std::cout << "No detected course conflicts.";
+            break;
+        case 5:
+            std::cout << "Semester-Time Conflict Detected!";
+            break;
+        case 28:
+            std::cout << "Time-Room Conflict Detected!";
+            break;
+        case 36:
+            std::cout << "Teacher-Time Conflict Detected!";
+
+    }
 
 }

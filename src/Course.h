@@ -6,13 +6,14 @@
 #include <string>
 #include <vector>
 #include <bitset>
+#include <iostream>
 
 
 class Course {
     std::string m_semesterOffered, m_department, m_classNum, m_sectionNum, m_className;
     std::vector<std::string> m_enrollLimit, m_days, m_time, m_building, m_room, m_teachers;
 
-    void calculateDecimalNum(const std::bitset<6> &conflictBitset);
+    static void calculateConflicts(const std::bitset<6> &conflictBitset);
 
 public:
     Course(std::string semesterOffered, std::string department, std::string classNum, std::string sectionNum,
