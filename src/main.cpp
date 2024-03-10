@@ -20,7 +20,7 @@ int main() {
     std::vector<Course> courses = readCoursesCSV(coursesFile);
     coursePtr = &courses;
 
-//    compareCourseEntries(*coursePtr);
+    compareCourseEntries(*coursePtr);
 
 
     testCourses(*coursePtr);
