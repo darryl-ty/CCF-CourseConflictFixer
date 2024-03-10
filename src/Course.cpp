@@ -103,36 +103,37 @@ const std::vector<std::string> &Course::getTeachers() const {
     return m_teachers;
 }
 
-uint8_t Course::compareCourses(const Course &course) const {
+void Course::compareCourses(const Course &course) const {
     std::bitset<6> conflictBitset;
 
     if (this->getSemesterOffered() == course.getSemesterOffered())
-        conflictBitset.set(0);
+        conflictBitset.set(size_t(0), true);
     if (this->getDays() == course.getDays())
-        conflictBitset.set(1);
+        conflictBitset.set(size_t(1), true);
     if(this->getTime() == course.getTime())
-        conflictBitset.set(2);
+        conflictBitset.set(size_t(2), true);
     if (this->getBuilding() == course.getBuilding())
-        conflictBitset.set(3);
+        conflictBitset.set(size_t(3), true);
     if (this->getRoom() == course.getRoom())
-        conflictBitset.set(4);
+        conflictBitset.set(size_t(4), true);
     if (this->getTeachers() == course.getTeachers())
-        conflictBitset.set(5);
+        conflictBitset.set(size_t(5), true);
 
 
-    uint8_t value = Course::calculateConflicts(conflictBitset);
+//    std::cout << "conflictBitset: " << conflictBitset << std::endl;
+    Course::calculateConflicts(conflictBitset);
 
 
-    return value;
+//    return value;
 }
 
 uint8_t Course::calculateConflicts(const std::bitset<6> &conflictBitset) {
-    uint8_t decimalValue = conflictBitset.to_ulong();
+    uint8_t decimalValue = conflictBitset.to_ullong();
     switch (decimalValue) {
         case 0:
             std::cout << "No detected course conflicts. ";
             return decimalValue;
-        case 8:
+        case 7:
             std::cout << "Semester-Time conflict detected! ";
             return decimalValue;
         case 31:
