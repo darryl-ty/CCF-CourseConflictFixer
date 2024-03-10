@@ -8,22 +8,28 @@
 
 std::vector<Course> readCoursesCSV(const std::string&);
 
-void compareCourseEntries(const std::vector<Course>& courses);
-void testCourses(const std::vector<Course>& courses);
+void compareCourseEntries(const std::vector<Course> &courses);
+void testCourses(const std::vector<Course> &courses);
 
 int main() {
     const std::string coursesFile = "courses.csv";
 
     std::cout << "Welcome to the CCF - Course Conflict Fixer!" << std::endl;
+    std::vector<Course> *coursePtr;
     auto courses = readCoursesCSV(coursesFile);
+    coursePtr = &courses;
 
-    compareCourseEntries(courses);
+    compareCourseEntries(*coursePtr);
 
 
-    testCourses(courses);
+    testCourses(*coursePtr);
 
 
     return 0;
+}
+
+void compareCourseEntries(const std::vector<Course> &courses) {
+
 }
 
 std::vector<Course> readCoursesCSV(const std::string& input) {
@@ -107,12 +113,8 @@ std::vector<Course> readCoursesCSV(const std::string& input) {
     return courses;
 }
 
-void compareCourseEntries(const std::vector<Course>& courses) {
 
-}
-
-
-void testCourses(const std::vector<Course>& courses) {
+void testCourses(const std::vector<Course> &courses) {
 
     assert(!courses.empty());
 
