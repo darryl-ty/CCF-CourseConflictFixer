@@ -123,7 +123,9 @@ std::vector<Course> readCoursesCSV(const std::string& input) {
 
 void testCourses(const std::vector<Course> &courses) {
     std::ostringstream output;
-    std::streambuf *outputBuffer = std::cout.rdbuf(output.rdbuf());
+    std::streambuf *outputBuffer = std::cout.rdbuf();
+
+    std::cout.rdbuf(output.rdbuf());
 
     assert(!courses.empty());
 
@@ -145,10 +147,14 @@ void testCourses(const std::vector<Course> &courses) {
     assert(output.str() == "No detected course conflicts. ");
     output.str("");
     output.clear();
+    std::cout.rdbuf(output.rdbuf());
 
     courses[0].compareCourses(courses[4]);
     std::cout.rdbuf(outputBuffer);
     assert(output.str() == "Non-critical course conflict detected. ");
+    output.str("");
+    output.clear();
+    std::cout.rdbuf(output.rdbuf());
 
     courses[4].compareCourses(courses[5]);
     std::cout.rdbuf(outputBuffer);
