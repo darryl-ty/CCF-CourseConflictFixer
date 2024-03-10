@@ -131,13 +131,13 @@ void Course::calculateConflicts(const std::bitset<6> &conflictBitset) {
         case 0:
             std::cout << "No detected course conflicts.";
             break;
-        case 5:
+        case 7:
             std::cout << "Semester-Time Conflict Detected!";
             break;
-        case 28:
+        case 30:
             std::cout << "Time-Room Conflict Detected!";
             break;
-        case 36:
+        case 38:
             std::cout << "Teacher-Time Conflict Detected!";
 
     }
