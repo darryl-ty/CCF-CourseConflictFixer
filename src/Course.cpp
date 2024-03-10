@@ -142,7 +142,7 @@ uint8_t Course::calculateConflicts(const std::bitset<6> &conflictBitset) {
             std::cout << "Teacher-Time conflict detected!";
             return decimalValue;
         default:
-            std::cout << "Non-critical course conflict detected.";
+            std::cout << "Non-critical course conflict detected. ";
             return 0;
 
     }
