@@ -5,15 +5,14 @@
 #include <string_view>
 #include <string>
 #include <vector>
+#include <bitset>
 
 
 class Course {
     std::string m_semesterOffered, m_department, m_classNum, m_sectionNum, m_className;
     std::vector<std::string> m_enrollLimit, m_days, m_time, m_building, m_room, m_teachers;
 
-    void checkForConflicts(const std::string &item){
-
-    }
+    void calculateDecimalNum(const std::bitset<6> &conflictBitset);
 
 public:
     Course(std::string semesterOffered, std::string department, std::string classNum, std::string sectionNum,
@@ -22,13 +21,7 @@ public:
            std::vector<std::string> room, std::vector<std::string> teachers);
     Course();
 
-    bool compareCourses(const Course &course){
-        bool hasConflict = false;
-
-
-
-        return hasConflict;
-    }
+    std::bitset<6> compareCourses(const Course &course) const;
 
 //    void setSemesterOffered(const std::string& semester);
 //
