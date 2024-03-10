@@ -130,16 +130,16 @@ uint8_t Course::calculateConflicts(const std::bitset<6> &conflictBitset) {
     uint8_t decimalValue = conflictBitset.to_ulong();
     switch (decimalValue) {
         case 0:
-            std::cout << "No detected course conflicts.";
+            std::cout << "No detected course conflicts. ";
             return decimalValue;
         case 8:
-            std::cout << "Semester-Time conflict detected!";
+            std::cout << "Semester-Time conflict detected! ";
             return decimalValue;
         case 31:
-            std::cout << "Time-Room conflict detected!";
+            std::cout << "Time-Room conflict detected! ";
             return decimalValue;
         case 39:
-            std::cout << "Teacher-Time conflict detected!";
+            std::cout << "Teacher-Time conflict detected! ";
             return decimalValue;
         default:
             std::cout << "Non-critical course conflict detected. ";
