@@ -103,7 +103,7 @@ const std::vector<std::string> &Course::getTeachers() const {
     return m_teachers;
 }
 
-std::bitset<6> Course::compareCourses(const Course &course) const {
+uint8_t Course::compareCourses(const Course &course) const {
     std::bitset<6> conflictBitset;
 
     if (this->getSemesterOffered() == course.getSemesterOffered())
@@ -120,27 +120,30 @@ std::bitset<6> Course::compareCourses(const Course &course) const {
         conflictBitset.set(5);
 
 
-    Course::calculateConflicts(conflictBitset);
+    uint8_t value = Course::calculateConflicts(conflictBitset);
 
 
-    return conflictBitset;
+    return value;
 }
 
-void Course::calculateConflicts(const std::bitset<6> &conflictBitset) {
-    switch (conflictBitset.to_ulong()) {
+uint8_t Course::calculateConflicts(const std::bitset<6> &conflictBitset) {
+    uint8_t decimalValue = conflictBitset.to_ulong();
+    switch (decimalValue) {
         case 0:
             std::cout << "No detected course conflicts.";
-            break;
+            return decimalValue;
         case 8:
-            std::cout << "Semester-Time Conflict Detected!";
-            break;
+            std::cout << "Semester-Time conflict detected!";
+            return decimalValue;
         case 31:
-            std::cout << "Time-Room Conflict Detected!";
-            break;
+            std::cout << "Time-Room conflict detected!";
+            return decimalValue;
         case 39:
-            std::cout << "Teacher-Time Conflict Detected!";
-            break;
+            std::cout << "Teacher-Time conflict detected!";
+            return decimalValue;
+        default:
+            std::cout << "Non-critical course conflict detected.";
+            return 0;
 
     }
-
 }
