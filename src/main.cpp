@@ -30,8 +30,11 @@ int main() {
 
 void compareCourseEntries(const std::vector<Course> &courses) {
 
-    for (size_t i = 0; i < courses.size()-1; i++) {
-        courses[i].compareCourses(courses[i+1]);
+    for (size_t i = 0; i < courses.size(); i++) {
+        for (size_t j = i+1; j < courses.size(); j++) {
+            courses[i].compareCourses(courses[j]);
+            std::cout << "Course " << i << " and Course " << j << std::endl;
+        }
     }
 }
 
