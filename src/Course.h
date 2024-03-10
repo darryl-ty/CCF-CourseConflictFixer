@@ -18,6 +18,12 @@ public:
            std::vector<std::string> room, std::vector<std::string> teachers);
     Course();
 
+    bool compareCourses(const Course& course){
+        bool hasConflict = false;
+
+        return hasConflict;
+    }
+
 //    void setSemesterOffered(const std::string& semester);
 //
 //    void setDepartment(const std::string& department);
