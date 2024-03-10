@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <sstream>
 #include <cassert>
 
 #include "Course.h"
@@ -19,7 +20,7 @@ int main() {
     std::vector<Course> courses = readCoursesCSV(coursesFile);
     coursePtr = &courses;
 
-    compareCourseEntries(*coursePtr);
+//    compareCourseEntries(*coursePtr);
 
 
     testCourses(*coursePtr);
@@ -121,6 +122,8 @@ std::vector<Course> readCoursesCSV(const std::string& input) {
 
 
 void testCourses(const std::vector<Course> &courses) {
+    std::ostringstream output;
+    std::streambuf *outputBuffer = std::cout.rdbuf(output.rdbuf());
 
     assert(!courses.empty());
 
@@ -135,6 +138,21 @@ void testCourses(const std::vector<Course> &courses) {
     assert("202501" == courses[1].getSemesterOffered());
     assert("ENGR" != courses[0].getDepartment());
     assert("CPSC" == courses[0].getDepartment());
+
+
+    courses[0].compareCourses(courses[1]);
+    std::cout.rdbuf(outputBuffer);
+    assert(output.str() == "No detected course conflicts. ");
+    output.str("");
+    output.clear();
+
+    courses[0].compareCourses(courses[4]);
+    std::cout.rdbuf(outputBuffer);
+    assert(output.str() == "Non-critical course conflict detected. ");
+
+    courses[4].compareCourses(courses[5]);
+    std::cout.rdbuf(outputBuffer);
+    assert(output.str() == "Time-Room conflict detected! ");
 
 
 }
