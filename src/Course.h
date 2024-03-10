@@ -22,7 +22,7 @@ public:
            std::vector<std::string> room, std::vector<std::string> teachers);
     Course();
 
-    uint8_t compareCourses(const Course &course) const;
+    void compareCourses(const Course &course) const;
 
 //    void setSemesterOffered(const std::string& semester);
 //
