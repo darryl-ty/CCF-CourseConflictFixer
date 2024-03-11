@@ -147,7 +147,7 @@ void testCourses(const std::vector<Course> &courses) {
     assert(output.str() == "No detected course conflicts. ");
     output.str(""); // Set output to be empty.
     output.clear(); // Clear state of output for next assertion.
-    std::cout.rdbuf(output.rdbuf()); // Change cout back to  a "local" output buffer that we can test for next assertion.
+    std::cout.rdbuf(output.rdbuf()); // Change cout back to a "local" output buffer that we can test for next assertion.
 
     courses[0].compareCourses(courses[4]);
     std::cout.rdbuf(outputBuffer);
