@@ -20,7 +20,7 @@ int main() {
     std::vector<Course> courses = readCoursesCSV(coursesFile);
     coursePtr = &courses;
 
-    compareCourseEntries(*coursePtr);
+//    compareCourseEntries(*coursePtr);
 
 
     testCourses(*coursePtr);
@@ -123,9 +123,9 @@ std::vector<Course> readCoursesCSV(const std::string& input) {
 
 void testCourses(const std::vector<Course> &courses) {
     std::ostringstream output;
-    std::streambuf *outputBuffer = std::cout.rdbuf();
+    std::streambuf *outputBuffer = std::cout.rdbuf(); // Create ptr for cout buffer we can reference later on.
 
-    std::cout.rdbuf(output.rdbuf());
+    std::cout.rdbuf(output.rdbuf()); // Change cout to a "local" output buffer that we can test.
 
     assert(!courses.empty());
 
@@ -143,11 +143,11 @@ void testCourses(const std::vector<Course> &courses) {
 
 
     courses[0].compareCourses(courses[1]);
-    std::cout.rdbuf(outputBuffer);
+    std::cout.rdbuf(outputBuffer); // Change cout back to its original buffer
     assert(output.str() == "No detected course conflicts. ");
-    output.str("");
-    output.clear();
-    std::cout.rdbuf(output.rdbuf());
+    output.str(""); // Set output to be empty.
+    output.clear(); // Clear state of output for next assertion.
+    std::cout.rdbuf(output.rdbuf()); // Change cout back to  a "local" output buffer that we can test for next assertion.
 
     courses[0].compareCourses(courses[4]);
     std::cout.rdbuf(outputBuffer);
@@ -159,6 +159,9 @@ void testCourses(const std::vector<Course> &courses) {
     courses[4].compareCourses(courses[5]);
     std::cout.rdbuf(outputBuffer);
     assert(output.str() == "Time-Room conflict detected! ");
+    output.str("");
+    output.clear();
+    std::cout.rdbuf(output.rdbuf());
 
 
 }
