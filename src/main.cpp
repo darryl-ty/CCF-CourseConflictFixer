@@ -5,7 +5,7 @@
 #include <sstream>
 #include <cassert>
 
-#include "Course.h"
+#include "course.h"
 
 std::vector<Course> readCoursesCSV(const std::string&);
 
