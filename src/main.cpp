@@ -20,7 +20,7 @@ int main() {
     std::vector<Course> courses = readCoursesCSV(coursesFile);
     coursePtr = &courses;
 
-//    compareCourseEntries(*coursePtr);
+    compareCourseEntries(*coursePtr);
 
 
     testCourses(*coursePtr);
@@ -161,7 +161,6 @@ void testCourses(const std::vector<Course> &courses) {
     assert(output.str() == "Time-Room conflict detected! ");
     output.str("");
     output.clear();
-    std::cout.rdbuf(output.rdbuf());
 
 
 }
