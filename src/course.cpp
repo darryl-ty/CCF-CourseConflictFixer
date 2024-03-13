@@ -2,7 +2,7 @@
 //#include <string_view> TODO - Refactor all strings later to be string_views, we only need to view and compare strings, not modify.
 #include <string>
 #include <utility>
-#include "Course.h"
+#include "course.h"
 
 Course::Course(std::string semesterOffered, std::string department, std::string classNum,
                  std::string sectionNum, std::string className, std::vector<std::string> enrollLimit,

@@ -1,7 +1,7 @@
 #pragma once
 #ifndef COURSES_H
 #define COURSES_H
-#include "Course.h"
+#include "course.h"
 
 class Courses {
 
