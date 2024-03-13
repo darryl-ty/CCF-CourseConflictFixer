@@ -1,6 +1,6 @@
 #define DOCTEST_CONFIG_IMPLEMENT
 
-#include "../../CourseConflictFixer/src/Course.h"
+#include "../../CourseConflictFixer/src/course.h"
 #include "doctest.h"
 
 Course testCourse = {"202408", "CPSC","1005","1","Intro to PCs and Software Appls",
