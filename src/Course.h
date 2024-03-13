@@ -1,6 +1,6 @@
 #pragma once
-#ifndef COURSES_H
-#define COURSES_H
+#ifndef COURSE_H
+#define COURSE_H
 
 #include <string_view>
 #include <string>
