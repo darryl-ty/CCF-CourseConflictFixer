@@ -7,6 +7,11 @@ class Courses {
 
     std::vector<Course> course;
 
+public:
+
+    Courses();
+    ~Courses();
+
 
 };
 
