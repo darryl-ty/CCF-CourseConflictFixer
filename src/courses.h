@@ -16,7 +16,7 @@ public:
 
     void addCourse(const Course &course);
 
-    std::vector<Course> getCourses();
+    std::vector<Course> getCourses() const;
 };
 
 

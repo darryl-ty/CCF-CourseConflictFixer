@@ -15,6 +15,6 @@ void Courses::addCourse(const Course &course) {
 
 }
 
-std::vector<Course> Courses::getCourses() {
+std::vector<Course> Courses::getCourses() const {
     return m_courses;
 }
