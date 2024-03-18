@@ -24,28 +24,28 @@ public:
 
     void compareCourses(const Course &course) const;
 
-//    void setSemesterOffered(const std::string& semester);
-//
-//    void setDepartment(const std::string& department);
-//
-//    void setClassNum(const std::string &mClassNum);
-//
-//    void setSectionNum(const std::string &mSectionNum);
-//
-//    void setClassName(const std::string &mClassName);
-//
-//    void setEnrollLimit(const std::string &mEnrollLimit);
-//
-//    void setDays(const std::vector<std::string> &mDays);
-//
-//    void setTime(const std::vector<std::string> &mTime);
-//
-//    void setBuilding(const std::vector<std::string> &mBuilding);
-//
-//    void setRoom(const std::vector<std::string> &mRoom);
-//
-//    void setTeachers(const std::vector<std::string> &mTeachers);
-//
+    void setSemesterOffered(const std::string& semester);
+
+    void setDepartment(const std::string& department);
+
+    void setClassNum(const std::string &mClassNum);
+
+    void setSectionNum(const std::string &mSectionNum);
+
+    void setClassName(const std::string &mClassName);
+
+    void setEnrollLimit(const std::vector<std::string> &mEnrollLimit);
+
+    void setDays(const std::vector<std::string> &mDays);
+
+    void setTime(const std::vector<std::string> &mTime);
+
+    void setBuilding(const std::vector<std::string> &mBuilding);
+
+    void setRoom(const std::vector<std::string> &mRoom);
+
+    void setTeachers(const std::vector<std::string> &mTeachers);
+
     const std::string &getSemesterOffered() const;
 
     const std::string &getDepartment() const;

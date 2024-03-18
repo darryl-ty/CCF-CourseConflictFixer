@@ -15,50 +15,50 @@ Course::Course(){};
 
 
 
-//void Courses::setSemesterOffered(const std::string& semester) {
-//    m_semesterOffered = semester;
-//}
-//
-//void Courses::setDepartment(const std::string& department) {
-//    m_department = department;
-//}
-//
-//void Courses::setClassNum(const std::string& mClassNum) {
-//    m_classNum = mClassNum;
-//}
-//
-//void Courses::setSectionNum(const std::string& mSectionNum) {
-//    m_sectionNum = mSectionNum;
-//}
-//
-//void Courses::setClassName(const std::string& mClassName) {
-//    m_className = mClassName;
-//}
-//
-//void Courses::setEnrollLimit(const std::string& mEnrollLimit) {
-//    m_enrollLimit = mEnrollLimit;
-//}
-//
-//void Courses::setDays(const std::vector<std::string>& mDays) {
-//    m_days = mDays;
-//}
-//
-//void Courses::setTime(const std::vector<std::string>& mTime) {
-//    m_time = mTime;
-//}
-//
-//void Courses::setBuilding(const std::vector<std::string>& mBuilding) {
-//    m_building = mBuilding;
-//}
-//
-//void Courses::setRoom(const std::vector<std::string>& mRoom) {
-//    m_room = mRoom;
-//}
-//
-//void Courses::setTeachers(const std::vector<std::string>& mTeachers) {
-//    m_teachers = mTeachers;
-//}
-//
+void Course::setSemesterOffered(const std::string& semester) {
+    m_semesterOffered = semester;
+}
+
+void Course::setDepartment(const std::string& department) {
+    m_department = department;
+}
+
+void Course::setClassNum(const std::string& mClassNum) {
+    m_classNum = mClassNum;
+}
+
+void Course::setSectionNum(const std::string& mSectionNum) {
+    m_sectionNum = mSectionNum;
+}
+
+void Course::setClassName(const std::string& mClassName) {
+    m_className = mClassName;
+}
+
+void Course::setEnrollLimit(const std::vector<std::string> &mEnrollLimit) {
+    m_enrollLimit = mEnrollLimit;
+}
+
+void Course::setDays(const std::vector<std::string> &mDays) {
+    m_days = mDays;
+}
+
+void Course::setTime(const std::vector<std::string> &mTime) {
+    m_time = mTime;
+}
+
+void Course::setBuilding(const std::vector<std::string> &mBuilding) {
+    m_building = mBuilding;
+}
+
+void Course::setRoom(const std::vector<std::string> &mRoom) {
+    m_room = mRoom;
+}
+
+void Course::setTeachers(const std::vector<std::string> &mTeachers) {
+    m_teachers = mTeachers;
+}
+
 const std::string &Course::getSemesterOffered() const {
     return m_semesterOffered;
 }
