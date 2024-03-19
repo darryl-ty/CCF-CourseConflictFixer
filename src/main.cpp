@@ -17,12 +17,10 @@ int main() {
     const std::string coursesFile = "courses.csv";
 
     std::cout << "Welcome to the CCF - Course Conflict Fixer!" << std::endl;
-    Courses *coursePtr;
     Courses courses = readCoursesCSV(coursesFile);
-    coursePtr = &courses;
+    Courses *coursePtr = &courses;
 
     compareCourseEntries(*coursePtr);
-
 
     testCourses(*coursePtr);
 
