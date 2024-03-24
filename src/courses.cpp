@@ -17,7 +17,6 @@ std::vector<Course> Courses::getCourses() const {
 }
 
 void Courses::compareCourseObjects() const {
-
     for (size_t i = 0; i < this->getCourses().size(); i++) {
         for (size_t j = i+1; j < this->getCourses().size(); j++) {
             this->getCourses()[i].compareCourses(this->getCourses()[j]);
