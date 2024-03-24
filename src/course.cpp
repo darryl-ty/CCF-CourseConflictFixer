@@ -120,11 +120,7 @@ void Course::compareCourses(const Course &course) const {
         conflictBitset.set(size_t(5), true);
 
 
-//    std::cout << "conflictBitset: " << conflictBitset << std::endl;
     Course::calculateConflicts(conflictBitset);
-
-
-//    return value;
 }
 
 uint8_t Course::calculateConflicts(const std::bitset<6> &conflictBitset) {
