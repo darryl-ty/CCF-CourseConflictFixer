@@ -29,13 +29,7 @@ int main() {
 }
 
 void compareCourseEntries(const Courses &courses) {
-
-    for (size_t i = 0; i < courses.getCourses().size(); i++) {
-        for (size_t j = i+1; j < courses.getCourses().size(); j++) {
-            courses.getCourses()[i].compareCourses(courses.getCourses()[j]);
-            std::cout << "Course " << i << " and Course " << j << std::endl;
-        }
-    }
+    courses.compareCourseObjects();
 }
 
 Courses readCoursesCSV(const std::string& input) {
