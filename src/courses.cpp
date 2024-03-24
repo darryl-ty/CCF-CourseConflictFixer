@@ -1,13 +1,10 @@
 #include "Courses.h"
 
 
-Courses::Courses() {
-}
+Courses::Courses() = default;
 
 
-Courses::~Courses() {
-
-}
+Courses::~Courses() = default;
 
 
 void Courses::addCourse(const Course &course) {
