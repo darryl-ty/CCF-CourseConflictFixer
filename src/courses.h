@@ -15,6 +15,7 @@ public:
     ~Courses();
 
     void addCourse(const Course &course);
+    void compareCourseObjects();
 
     std::vector<Course> getCourses() const;
 };
