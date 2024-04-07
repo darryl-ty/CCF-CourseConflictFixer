@@ -16,6 +16,7 @@ public:
 
     void addCourse(const Course &course);
     void compareCourseObjects() const;
+    void readCourseCSV(const std::string &input);
 
     std::vector<Course> getCourses() const;
 };
